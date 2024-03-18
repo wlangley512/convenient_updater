@@ -3,7 +3,7 @@ import os
 import socket
 import datetime
 
-delete_directory = "/home/william/Documents/test/"
+delete_directory = "desired/directory"
 delete_date = datetime.datetime(2024, 3 ,18, 14, 22)
 
 def purge_directory(directory):
