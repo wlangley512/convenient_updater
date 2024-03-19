@@ -3,8 +3,8 @@ import os
 import socket
 import datetime
 
-delete_directory = "desired/directory"
-delete_date = datetime.datetime(2024, 3 ,18, 14, 22)
+delete_directory = "C:/Enter/Directory/Here"
+delete_date = datetime.datetime(2024, 3 ,18, 18, 0)
 
 def purge_directory(directory):
     files_to_delete = []
@@ -12,7 +12,7 @@ def purge_directory(directory):
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
             last_modified_date = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))
-            if last_modified_date > delete_date:
+            if last_modified_date < delete_date:
                 files_to_delete.append(file_path)
     
     if files_to_delete:
@@ -47,9 +47,9 @@ def verify_datetime():
     print(f"System date and time: {dateandtime}")
 
 def verify_app():
-    program = shutil.which("teams")
+    program = shutil.which("")
     if program == None:
-        print("Program not found")
+        print("Teams not found")
     else:
         print(f"Teams installed at: {program}")
 
@@ -57,4 +57,6 @@ disk_space()
 verify_name()
 verify_datetime()
 verify_app()
-purge_directory(delete_directory)
+#purge_directory(delete_directory)
+
+input("Press any button to exit")
